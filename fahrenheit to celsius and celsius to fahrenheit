@@ -1,0 +1,41 @@
+# Module
+def fare():
+    user = float(input("Enter temp in fahrenheit: "))
+
+    cel = (float(user) - 32) * 5 / 9
+    print("celsius:" + str(cel))
+
+
+def cel():
+    user = float(input("Enter temp in celsius: "))
+
+    far = (float(user) * 9 / 5) + 32
+    print("fahrenheit:" + str(far))
+------------------------------------------------------------------
+# Main Program
+
+from temp import fare
+from temp import cel
+
+
+def userr():
+    try:
+        user = input("Press '1' for Fahrenheit to Celsius, or Press '2' for Celsius to Fahrenheit: ")
+        if user == '1':
+            fare()
+        elif user == '2':
+            cel()
+        elif user != '1' or '2':
+
+            print("invalid input")
+            userr()
+
+    except ValueError:
+        print("invalid input")
+
+
+userr()
+
+    
+    
+ 
