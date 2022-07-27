@@ -1,0 +1,15 @@
+def main():
+    total = 0
+    while True:
+        try:
+            user = input("Enter Item Price: ")
+            if user == 'd' or user == 'done':
+                break
+            else:
+                total += float(user) * 1.06
+        except ValueError:
+            print("Please Enter a Number :|")
+    print("Total after 6% Tax: ", total)
+
+
+main()
