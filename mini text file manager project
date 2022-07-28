@@ -1,0 +1,45 @@
+import random
+import string
+
+
+def main():
+    title = input("What title would you like your account info to be under?: ")
+    user = int(input(f"How long do you want your username to be under {title}?: "))
+    user2 = int(input(f"How long would you like your password to be under {title}?: "))
+    print('\n')
+
+    password = ''
+    username = ''
+
+    for i in range(user2):
+        password += random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation)
+    for j in range(user):
+        username += random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits)
+
+    print(f"Your username for '{title}' is {username}.")
+    print(f"Your password for '{title}' is {password}.")
+    with open("password.txt", "a") as f:
+        f.write(f"Your Password and Username for '{title}' are password: {password} | username: {username}'\n")
+
+
+def ask():
+    user = input("Would you like to see your passwords first? (y/n): ")
+    if user == 'y' or 'yes':
+        user_input = input("What title do you want to see?: ")
+        file = open("password.txt", "r")
+        for line in file:
+            if user_input in line:
+                print(line)
+            elif user_input not in line:
+
+                print("That title doesnt exist")
+                ask()
+    elif user == 'n' or 'no':
+
+        main()
+    elif user != 'y' or 'n' or 'yes' or 'no':
+        print("Please enter either 'y' or 'n' response")
+        ask()
+
+
+ask()
