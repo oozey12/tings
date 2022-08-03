@@ -1,0 +1,115 @@
+import sys
+
+
+def seconds_to_minutes(seconds):
+    minutes = seconds / 60
+    return "{:,}".format(minutes)
+
+
+def minutes_to_hours(minutes):
+    hours = minutes / 60
+    return "{:,}".format(hours)
+
+
+def hours_to_days(hours):
+    days = hours / 24
+    return "{:,}".format(days)
+
+
+def days_to_years(days):
+    years = days / 365
+    return "{:,}".format(years)
+
+
+def years_to_decade(years):
+    decades = years / 10
+    return "{:,}".format(decades)
+
+
+def decade_to_century(decade):
+    centuries = decade / 10
+    return "{:,}".format(centuries)
+
+
+def prevent_close():
+    input("Press 'q' to close or other key to continue:")
+
+
+if __name__ == "__main__":
+    prevent_close()
+
+
+def ask(ask):
+    if ask == 'y' or ask == 'yes':
+        options()
+        main()
+    if ask == 'n' or ask == 'no':
+        sys.exit() or prevent_close()
+
+
+print("\n")
+print("Welcome to the time converter!")
+
+
+def options():
+    print("----------------------------")
+    print("1. > seconds to minutes")
+    print("2. > minutes to hours")
+    print("3. > hours to days")
+    print("4. > days to years")
+    print("5. > years to decades")
+    print("6. > decades to centuries")
+    print("----------------------------")
+
+
+options()
+
+
+def quit(choice):
+    if choice == "q":
+        sys.exit()
+    else:
+        print("Invalid input, please try again")
+        options()
+        main()
+
+
+def main():
+    try:
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            seconds = int(input("Enter the number of seconds: "))
+            print(f"{seconds} second(s) is ", seconds_to_minutes(seconds), "minutes")
+        elif choice == 2:
+            minutes = int(input("Enter the number of minutes: "))
+            print(f"{minutes} minute(s) is ", minutes_to_hours(minutes), "hours")
+        elif choice == 3:
+            hours = int(input("Enter the number of hours: "))
+            print(f"{hours} hour(s) is ", hours_to_days(hours), "days")
+        elif choice == 4:
+            days = int(input("Enter the number of days: "))
+            print(f"{days} day(s) is ", days_to_years(days), "years")
+        elif choice == 5:
+            years = int(input("Enter the number of years: "))
+            print(f"{years} year(s) is ", years_to_decade(years), "decades")
+        elif choice == 6:
+            decades = int(input("Enter the number of decades: "))
+            print(f"{decades} decade(s) is ", decade_to_century(decades), "centuries")
+        elif choice == 'q' or 'quit':
+            quit(choice)
+        else:
+            print("Invalid choice: Input a Number Between 1 and 6")
+            options()
+            main()
+
+    except ValueError:
+        print("Invalid Input: Input a Numerical Value\n")
+        options()
+        main()
+
+
+main()
+while True:
+    user = input("Would you to calculate again?(y/n): ")
+    print("\n")
+    ask(user)
