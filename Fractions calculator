@@ -1,0 +1,274 @@
+from fractions import Fraction
+
+
+def mean(list_of_numbers):
+    return sum(list_of_numbers) / len(list_of_numbers)
+
+
+def decimal_to_fraction(decimal):
+    a = Fraction(decimal).limit_denominator()
+    percent = decimal * 100
+    print("\n")
+    print("fraction: ", a)
+    print(f"percent: %{percent}")
+    print("\n")
+
+
+def fraction_to_decimal(a, b):
+    decimal = a / b
+    percentage = decimal * 100
+    print("\n")
+    print("decimal: ", decimal)
+    print(f"percentage: %{percentage}")
+    print("\n")
+
+
+def add_two_fractions(a, b, c, d):
+    frac1 = a / b
+    frac2 = c / d
+    total = frac1 + frac2
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("added fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print("\n")
+
+
+def subtract_two_fractions(a, b, c, d):
+    frac1 = a / b
+    frac2 = c / d
+    total = frac1 - frac2
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("subtracted fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print("\n")
+
+
+def multiply_two_fractions(a, b, c, d):
+    frac1 = a / b
+    frac2 = c / d
+    total = frac1 * frac2
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("---------------------")
+    print("multiplied fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print(f"decimal: {total}")
+    print("---------------------")
+    print("\n")
+
+
+def add_one_mixed_fraction(whole_number, a, b, c, d):
+    reduced_fraction = whole_number * b + a
+    frac1 = reduced_fraction / b
+    frac2 = c / d
+    total = frac1 + frac2
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("---------------------")
+    print("added fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print(f"decimal: {total}")
+    print("---------------------")
+    print("\n")
+
+
+def add_two_mixed_fractions(whole_number, a, b, whole_number2, c, d):
+    frac1 = whole_number * b + a
+    frac2 = whole_number2 * d + c
+    frac1_total = frac1 / b
+    frac2_total = frac2 / d
+    total = frac1_total + frac2_total
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("---------------------")
+    print("added fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print(f"decimal: {total}")
+    print("---------------------")
+    print("\n")
+
+
+def subtract_one_mixed_fraction(whole_number, a, b, c, d):
+    reduced_fraction = whole_number * b + a
+    frac1 = reduced_fraction / b
+    frac2 = c / d
+    total = frac1 - frac2
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("---------------------")
+    print("subtracted fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print(f"decimal: {total}")
+    print("---------------------")
+    print("\n")
+
+
+def subtract_two_mixed_fractions(whole_number, a, b, whole_number2, c, d):
+    frac1 = whole_number * b + a
+    frac2 = whole_number2 * d + c
+    frac1_total = frac1 / b
+    frac2_total = frac2 / d
+    total = frac1_total - frac2_total
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("---------------------")
+    print("subtracted fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print(f"decimal: {total}")
+    print("---------------------")
+    print("\n")
+
+
+def multiply_one_mixed_fraction(whole_number, a, b, c, d):
+    reduced_fraction = whole_number * b + a
+    frac1 = reduced_fraction / b
+    frac2 = c / d
+    total = frac1 * frac2
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("---------------------")
+    print("multiplied fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print(f"decimal: {total}")
+    print("---------------------")
+    print("\n")
+
+
+def multiply_two_mixed_fractions(whole_number, a, b, whole_number2, c, d):
+    frac1 = whole_number * b + a
+    frac2 = whole_number2 * d + c
+    frac1_total = frac1 / b
+    frac2_total = frac2 / d
+    total = frac1_total * frac2_total
+    percentage = total * 100
+    final_total = Fraction(total).limit_denominator(100)
+    print("\n")
+    print("---------------------")
+    print("multiplied fraction:  ", final_total)
+    print("percentage: %{}".format(percentage))
+    print(f"decimal: {total}")
+    print("---------------------")
+    print("\n")
+
+
+def choices():
+    print("-1. find mean")
+    print("1. Decimal to Fraction")
+    print("2. Fraction to decimal")
+    print("3. Add two Fractions")
+    print("4. Subtract two Fractions")
+    print("5. Multiply two Fractions")
+    print("6. Add one mixed Fraction")
+    print("7. Add two mixed Fractions")
+    print("8. Subtract one mixed Fraction")
+    print("9. Subtract two mixed Fractions")
+    print("10. Multiply one mixed Fraction")
+    print("11. Multiply two mixed Fractions")
+
+
+while True:
+    def main():
+        choices()
+        print("\n")
+        user = int(input("enter choice: "))
+        if user == 1:
+            user1 = float(input("enter decimal: "))
+            decimal_to_fraction(user1)
+        elif user == 2:
+            user1 = float(input("enter numerator: "))
+            user2 = float(input("enter denominator: "))
+            fraction_to_decimal(user1, user2)
+        elif user == 3:
+            user1 = float(input("enter numerator: "))
+            user2 = float(input("enter denominator: "))
+            user3 = float(input("enter numerator: "))
+            user4 = float(input("enter denominator: "))
+            add_two_fractions(user1, user2, user3, user4)
+        elif user == 4:
+            user1 = float(input("enter numerator: "))
+            user2 = float(input("enter denominator: "))
+            user3 = float(input("enter numerator: "))
+            user4 = float(input("enter denominator: "))
+            subtract_two_fractions(user1, user2, user3, user4)
+        elif user == 5:
+
+            user1 = float(input("enter numerator: "))
+            user2 = float(input("enter denominator: "))
+            user3 = float(input("enter numerator: "))
+            user4 = float(input("enter denominator: "))
+            multiply_two_fractions(user1, user2, user3, user4)
+        elif user == 6:
+
+            user1 = float(input("enter whole number: "))
+            user2 = float(input("enter numerator: "))
+            user3 = float(input("enter denominator: "))
+            user4 = float(input("enter numerator: "))
+            user5 = float(input("enter denominator: "))
+            add_one_mixed_fraction(user1, user2, user3, user4, user5)
+        elif user == 7:
+
+            user1 = float(input("enter whole number: "))
+            user2 = float(input("enter numerator: "))
+            user3 = float(input("enter denominator: "))
+            user4 = float(input("enter whole number: "))
+            user5 = float(input("enter numerator: "))
+            user6 = float(input("enter denominator: "))
+            add_two_mixed_fractions(user1, user2, user3, user4, user5, user6)
+        elif user == 8:
+
+            user1 = float(input("enter whole number: "))
+            user2 = float(input("enter numerator: "))
+            user3 = float(input("enter denominator: "))
+            user4 = float(input("enter numerator: "))
+            user5 = float(input("enter denominator: "))
+            subtract_one_mixed_fraction(user1, user2, user3, user4, user5)
+        elif user == 9:
+
+            user1 = float(input("enter whole number: "))
+            user2 = float(input("enter numerator: "))
+            user3 = float(input("enter denominator: "))
+            user4 = float(input("enter whole number: "))
+            user5 = float(input("enter numerator: "))
+            user6 = float(input("enter denominator: "))
+            subtract_two_mixed_fractions(user1, user2, user3, user4, user5, user6)
+        elif user == 10:
+
+            user1 = float(input("enter whole number: "))
+            user2 = float(input("enter numerator: "))
+            user3 = float(input("enter denominator: "))
+            user4 = float(input("enter numerator: "))
+            user5 = float(input("enter denominator: "))
+            multiply_one_mixed_fraction(user1, user2, user3, user4, user5)
+        elif user == 11:
+
+            user1 = float(input("enter whole number: "))
+            user2 = float(input("enter numerator: "))
+            user3 = float(input("enter denominator: "))
+            user4 = float(input("enter whole number: "))
+            user5 = float(input("enter numerator: "))
+            user6 = float(input("enter denominator: "))
+            multiply_two_mixed_fractions(user1, user2, user3, user4, user5, user6)
+        elif user == -1:
+            list_of_numbers1 = []
+            user = int(input("How many numbers would you like to find the mean of?:  "))
+            for i in range(user):
+                num = int(input("Enter a number:  "))
+                list_of_numbers1.append(num)
+            print("\n")
+            print("---------------------")
+            print("mean:", mean(list_of_numbers1))
+            print("---------------------")
+            print("\n")
+
+
+    main()
