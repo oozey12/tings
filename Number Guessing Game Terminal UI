@@ -1,0 +1,42 @@
+
+import random
+
+lives = 10
+list_of_numbers = [random.randint(1, 100) for i in range(10)]
+print(list_of_numbers)
+blank_spaces = ["_" * len(str(i)) for i in list_of_numbers]
+print("Welcome to the number guessing game!")
+print("You have 10 chances to guess the number")
+print("The numbers are between 1 and 100")
+print("you get a life for every correct guess")
+print("Good luck!")
+print("\n")
+print("numbers:")
+print(" | ".join(blank_spaces))
+while True:
+    user = int(input("Enter your guess: "))
+    if user in list_of_numbers:
+        lives += 1
+        index = list_of_numbers.index(user)
+        blank_spaces[index] = str(user)
+        print("\n")
+        print("you got it right!")
+        print(f"you have {lives} lives left")
+        print("numbers correctly guessed:")
+        print(" | ".join(blank_spaces))
+        print("\n")
+
+    if user not in list_of_numbers:
+        lives -= 1
+        print("\n")
+        print("you got it wrong!")
+        print(f"you have {lives} lives left")
+        print("numbers correctly guessed:")
+        print(" | ".join(blank_spaces))
+        print("\n")
+        print("\n")
+
+    if lives == 0:
+        print(f"you have {lives} left")
+        print("You lost")
+        break
